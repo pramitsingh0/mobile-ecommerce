@@ -1,0 +1,20 @@
+{% extends 'mobile_store/base.html' %}
+
+{% block content %}
+  <div class="container" style="margin-top: 5%;">
+    <img src="{{ product.model_image }}" alt="Mobile Image" id="product_image">
+  </div>
+  <div class="container content" >
+    <h2>{{ product.model_name }}</h2>
+    <p><b>Price: {{ product.model_price }}</b></p>
+    <p>Seller: {{ product.model_seller }}</p>
+    <button type="button" class="btn btn-primary">Buy Phone</button>
+    <h3>Model Specs</h3>
+    <pre>
+    RAM: {{ product.model_ram }}
+    STORAGE: {{ product.model_storage }}
+    CAMERA: {{ product.camera_spec }}
+    DISPLAY: {{ product.model_display }}
+    </pre>
+  </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{%extends 'mobile_store/base.html' %}
+{% block content %}
+        <div class="container content" style="margin-top: 5%;">
+            <!-- Jumbotron Header -->
+            <div class="jumbotron home-spacer" id="products-jumbotron">
+                <h1>Welcome to our Mobile Store!</h1>
+                <p>We have the best Smart Phones. No need to hunt around, we have it all in one place.</p>
+            </div>
+            <hr>
+            {% if products %}
+              {% for product in products %}
+              <div class="text-center" id="cameras">
+                <div class="col-md-3 col-sm-6 home-feature">
+                    <div class="thumbnail">
+                        <img src="{{ product.model_image }}" alt="phone images">
+                        <a href="{% url 'infopage' product_id=product.id %}" class="caption">
+                          <h3> {{ product.model_name }} </h3>
+                          <p> Price: Rs. {{ product.model_price }} </p>
+                        </a>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+          <div class="alert alert-warning">No mobile phones in stock</div>
+          {% endif %}
+        </div>
+{% endblock %}

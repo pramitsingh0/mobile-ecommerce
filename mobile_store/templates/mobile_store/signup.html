@@ -1,0 +1,54 @@
+{% extends "mobile_store/base.html" %}
+{% block content %}
+<div class="container signup" style="margin-top: 5%;">
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4 form">
+      <h1> Sign up </h1>
+      {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endif %}
+      <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+
+          <input class="form-control" placeholder="First Name" type="text" name="firstname" required="true">
+
+          <br>
+
+          <input class="form-control" placeholder="Last Name" type="text" name="lastname" required="true">
+
+          <br>
+          <input class="form-control" placeholder="Username" type="text" name="username" required="true">
+
+          <br>
+
+          <input class="form-control" placeholder="Email" type="text" name="email">
+
+          <br>
+
+          <input class="form-control" placeholder="Password" type="password" name="password">
+
+          <br>
+
+          <input class="form-control" placeholder="Confirm Password" type="password" name="confirmation">
+
+          <br>
+
+          <div class="mx-auto">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <center>
+      <p>Copyright © Pramit Singh. All Rights
+        Reserved | Contact Us: +91 99378 77665. </p>
+    </center>
+  </div>
+</footer>
+{% endblock%}

@@ -1,0 +1,49 @@
+{% extends 'mobile_store/base.html' %}
+
+{% block content %}
+<div class="container container" style="margin-top: 7%;">
+  <form action="{% url 'sell' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="modelname">Model Name: </label>
+      <input type="text" name="modelname" required="true">
+    </div>
+    <div class="form-group">
+      <label for="modelmemory">Memory: </label>
+      <select id="form-control" name="modelmemory">
+        <option value="2">2GB</option>
+        <option value="4">4GB</option>
+        <option value="6">6GB</option>
+        <option value="8">8GB</option>
+        <option value="12">12GB</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="modelstorage">Storage: </label>
+      <input type="text" name="modelstorage" required="true">
+    </div>
+    <div class="form-group">
+      <label for="modelcamera">Camera: </label>
+      <input type="text" name="modelcamera" required="true">
+    </div>
+    <div class="form-group">
+      <label for="modeldisplay">Display: </label>
+      <select id="form-control" name="modeldisplay">
+        <option value="LED">LED</option>
+        <option value="IPS">IPS</option>
+        <option value="AMO">AMOLED</option>
+        <option value="SAMO">sAMOLED</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="modelimage">Image Link: </label>
+      <input type="text" name="modelimage" required="true">
+    </div>
+    <div class="form-group">
+      <label for="modelprice">Mobile Price: </label>
+      <input type="text" name="modelprice" required="true">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

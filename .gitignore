@@ -1,0 +1,6 @@
+
+.venv
+mobileEshop/__pycache__
+mobile_store/__pycache__
+mobile_store/migrations/__pycache__
+mobile_store/templates/.DS_Store
