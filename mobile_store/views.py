@@ -121,7 +121,7 @@ def verify(request):
     else:
         # If user is not submitting form redirect user to verification page
         return render(request, "mobile_store/verification.html")
-login_required(login_url='login')
+@login_required(login_url='login')
 def product_page(request, product_id):
     # Fetch product from product id from database
     product = MobilePhone.objects.get(pk=product_id)
